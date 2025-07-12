@@ -1,11 +1,16 @@
 class Solution {
 public:
     int minCostClimbingStairs(vector<int>& cost) {
+       // My Bottom Up Approach for this problem .
+       // Optimizing to achieve constant space complexity .
         int n = cost.size();
-        vector<int> dp(n+1 , 0);
+        int prev = 0;
+        int curr = 0 ;
         for(int i = 2  ; i < n+1  ; i++){
-            dp[i] = min(dp[i-1] + cost[i-1] , dp[i-2] + cost[i-2]);
+            int next = min(curr + cost[i-1] , prev + cost[i-2]);
+            prev = curr ;
+            curr = next ;
         }
-        return dp[n];
+        return curr;
     }
 };
