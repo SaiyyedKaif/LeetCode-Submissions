@@ -45,4 +45,4 @@ public:
         }
         return curr;
     }
-};
+}; // ISKI SPACE COMPLEXITY O(1) HAI COMPARED TO O(N) IN PREVIOUS CASES. 
